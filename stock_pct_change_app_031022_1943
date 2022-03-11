@@ -1,0 +1,34 @@
+"""
+THIS APP IS A SIMPLE CALCULATOR FOR PERCENTAGE CHANGE IN A STOCK PRICE'S VALUE OVER TIME.
+
+"""
+
+def pct_change_calculator():
+    stock_name = input("Please enter the name of your stock: ")
+    stock_price_time_1 = input(f"What is the original price of {stock_name} stock?: $")
+    stock_price_time_2 = input("What is the current price of your stock?: $")
+    price_diff = (float(stock_price_time_2) - float(stock_price_time_1))
+    pct_change = (price_diff / float(stock_price_time_1)) * 100
+    
+    if price_diff > 0:
+        appreciation = float(price_diff) * 1000
+        print()
+        print(f"The price differential for {stock_name} stock between the 2 time periods is: ${price_diff:,.2f}.")
+        print(f"The percentage change in stock value is: {pct_change:,.2f}%")
+        print()
+        print(f"1,000 shares of {stock_name} stock at the original price would've made you ${appreciation:,.2f}.")
+        print()
+        
+    elif price_diff < 0:
+        depreciation = float(price_diff) * 1000
+        print()
+        print(f"The price differential for {stock_name} stock between the 2 time periods is: ${price_diff:,.2f}.")
+        print(f"The percentage change in stock value is: {pct_change:,.2f}%")
+        print()
+        print(f"1,000 shares of {stock_name} stock at the original price would've lost you ${depreciation:,.2f}.")
+        print()
+        
+    else:
+        print()
+        print(f"You wouldn't have lost or gained any money between the two time periods you entered.")
+        print()
